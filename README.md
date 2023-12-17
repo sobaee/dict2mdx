@@ -29,4 +29,4 @@ Thanks to 4pda guy who made the primary version of this automatic bash script wh
 
 Thanks to the developers of Pyglossary and mdict-utils.
 
-Download this modified ready version of Pyglossary, with octopus_mdict_source.py added and setup.py fixed, so after decompression of this zip file, you can do: `python setup.py install` to install pyglossay and it will work perfectly: https://drive.google.com/open?id=1foGOqZGtbVgG65zlEk2hXMPXKSQyNuIX
+Download this modified ready version of Pyglossary, with octopus_mdict_source.py added and setup.py fixed, so after decompression of this zip file, you can do: `python setup.py install` from imside the decompressed folder to install this modified version of pyglossay and it will work perfectly: https://drive.google.com/open?id=1foGOqZGtbVgG65zlEk2hXMPXKSQyNuIX
