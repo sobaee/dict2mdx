@@ -3,7 +3,9 @@ This is a bash script to automatically convert Lingvo DSL, Babylon BGL, Stardict
 N.B: this script can also pack the resources folder which is located beside the dictionary file to MDD automatically.
 
 
-  
+<br />
+<br />
+<br />
 REQUIRMENTS: 
 
 1- [Pyglossary](https://github.com/ilius/pyglossary) which originally come without octopus_mdict_source.py plugin if you install it using `pip install pyglossary`, because of the developer decided to stop developing this plugin.  
