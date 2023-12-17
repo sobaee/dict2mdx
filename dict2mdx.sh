@@ -51,7 +51,17 @@ read -p "${src%.*}.mtxt already exists! Do you want to convert it directly to MD
     case $answer in
     y|Y) # Use Word Title option
         mdict --title title.html --description description.html -a "${src%.*}.mtxt" "${src%.*}.mdx"
+        if [ -d "${src%.*}.cache_res" ]; then
+        mdict -a "${src%.*}.cache_res" "${src%.*}.mdd"
+        fi
 
+        if [ -d "${src%.*}.mtxt_res" ]; then
+        mdict -a "${src%.*}.mtxt_res" "${src%.*}.mdd"
+        fi
+
+        if [ -d "${src%.*}.txt_res" ]; then
+        mdict -a "${src%.*}.txt_res" "${src%.*}.mdd"
+        fi
         echo 'All done!'
         exit 1
         ;;
