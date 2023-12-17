@@ -7,7 +7,7 @@ REQUIRMENTS:
 1- Pyglossary (which originally come without octopus_mdict_source.py plugin if you install it using `pip`, because of the developer decided to stop developing this plugin)
 https://github.com/ilius/pyglossary
 
-N.B: You can download my modified ready version of pyglossary with "octopus_mdict_source.py" plugin added and setup.py fixed; from the google drive link and install it
+SO: You can download my modified ready version of pyglossary with "octopus_mdict_source.py" plugin added and setup.py fixed; from the following google drive link. After decompression of the downloaded zip file, you can do: `python setup.py install` from inside the decompressed folder to install this modified version of pyglossay and it will work perfectly: https://drive.google.com/open?id=1foGOqZGtbVgG65zlEk2hXMPXKSQyNuIX
 
 2- "octopus_mdict_source.py" plugin to be added to /pyglossary/plugins of Pyglossary:
 https://gist.github.com/ilius/88d11fa37a4a40cd0d7f6535120b0693
@@ -25,8 +25,6 @@ Navigate to the directory that contains this bash file and copy the dictionary f
 
 If requirements are met and all dependencies are ready, your conversion will run smoothly and your .mdx dictionary will be ready, to be used by Multi-dictionaries viewers which support .mdx files (ex. Bluedict, Mdict, Golden Dict desktop, etc).
 
-Thanks to 4pda guy who made the primary version of this automatic bash script who inspired me to update this script and make it more useful.
+Thanks to 4pda.to guy who made the primary version of this automatic bash script who inspired me to update this script and make it more useful.
 
-Thanks to the developers of Pyglossary and mdict-utils.
-
-Download this modified ready version of Pyglossary, with octopus_mdict_source.py added and setup.py fixed, so after decompression of this zip file, you can do: `python setup.py install` from imside the decompressed folder to install this modified version of pyglossay and it will work perfectly: https://drive.google.com/open?id=1foGOqZGtbVgG65zlEk2hXMPXKSQyNuIX
+Thanks to the owners of Pyglossary and mdict-utils.
