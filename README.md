@@ -4,7 +4,7 @@ N.B: this script can also pack the resources folder which is located beside the 
 
 REQUIRMENTS: 
 
-1- Pyglossary (which originally come without octopus_mdict_source.py plugin if you install it using "pip", because of the developer decided to stop developing this plugin)
+1- Pyglossary (which originally come without octopus_mdict_source.py plugin if you install it using `pip`, because of the developer decided to stop developing this plugin)
 https://github.com/ilius/pyglossary
 
 N.B: I advise you to download the pyglossary-master zip file from the previous link and decompress it to any directory then copy the "octopus_mdict_source.py" plugin which you will download from below to /pyglossary/plugins directory and then install Pyglossary from the main directory using python, by this command: python setup.py install
@@ -14,14 +14,14 @@ https://gist.github.com/ilius/88d11fa37a4a40cd0d7f6535120b0693
 
 3- python 3.9 and up.
 
-4- pip3 install mdict-utils lxml polib PyYAML beautifulsoup4 marisa-trie html5lib PyICU libzim>=1.0 python-lzo prompt_toolkit python-idzip
+4- `pip3 install mdict-utils lxml polib PyYAML beautifulsoup4 marisa-trie html5lib PyICU libzim>=1.0 python-lzo prompt_toolkit python-idzip`
 
 
 
 USAGE:
 
 Navigate to the directory that contains this bash file and copy the dictionary file to the same directory, and run this command:
-bash dict2mdx.sh dictname.anyextension (ex. dict.txt)
+`bash dict2mdx.sh dictname.anyextension` (ex. dict.txt)
 
 If requirements are met and all dependencies are ready, your conversion will run smoothly and your .mdx dictionary will be ready, to be used by Multi-dictionaries viewers which support .mdx files (ex. Bluedict, Mdict, Golden Dict desktop, etc).
 
