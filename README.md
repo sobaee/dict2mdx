@@ -6,7 +6,7 @@ REQUIRMENTS:
 
 1- [Pyglossary](https://github.com/ilius/pyglossary) which originally come without octopus_mdict_source.py plugin if you install it using `pip install pyglossary`, because of the developer decided to stop developing this plugin.
 
-SO: You can download my modified ready version of pyglossary 4.6.1 with "octopus_mdict_source.py" plugin added and setup.py fixed; from this Google Drive [LINK](https://drive.google.com/open?id=1foGOqZGtbVgG65zlEk2hXMPXKSQyNuIX). Decompress the downloaded zip file, and run: `python setup.py install` from inside the decompressed folder to install this modified version of pyglossay and it will work perfectly.
+SO: You can download my modified ready version of pyglossary 4.6.1 with octopus_mdict_source.py plugin added and setup.py fixed; from this Google Drive [LINK](https://drive.google.com/open?id=1foGOqZGtbVgG65zlEk2hXMPXKSQyNuIX). Decompress the downloaded zip file, and run: `python setup.py install` from inside the decompressed folder to install this modified version of pyglossay and it will work perfectly.
 
 2- JUST IF YOU WILL NOT USE MY MODIFIED VERSION OF PYGLOSSARY FROM THE GOOGLE DRIVE LINK ABOVE; you will need to download "octopus_mdict_source.py" plugin from this [link](https://gist.github.com/ilius/88d11fa37a4a40cd0d7f6535120b0693) and add it to /pyglossary/plugins folder of Pyglossary.
 
