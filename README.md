@@ -20,12 +20,12 @@ https://gist.github.com/ilius/88d11fa37a4a40cd0d7f6535120b0693
 
 USAGE:
 
-Navigate to the directory that contains the dictionary file and this bash file and run this command:
+Navigate to the directory that contains this bash file and copy the dictionary file to the same directory, and run this command:
 Bash dict2mdx.sh dictname.anyextension (ex. dict.txt)
 
-If requirements are met and all dependencies are ready, your conversion will run smoothly and your .mdx dictionary will be ready, to be used by Multi-dictionaries viewers (ex. Bluedict, Mdict, Golden Dict desktop, etc).
+If requirements are met and all dependencies are ready, your conversion will run smoothly and your .mdx dictionary will be ready, to be used by Multi-dictionaries viewers which support .mdx files (ex. Bluedict, Mdict, Golden Dict desktop, etc).
 
-Thanks to 4pda guy who made a primary version of this automatic bash script who inspired me to update this script and make it more useful.
+Thanks to 4pda guy who made the primary version of this automatic bash script who inspired me to update this script and make it more useful.
 
 Thanks to the developers of Pyglossary and mdict-utils.
 
