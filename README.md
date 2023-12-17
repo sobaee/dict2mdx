@@ -21,7 +21,7 @@ https://gist.github.com/ilius/88d11fa37a4a40cd0d7f6535120b0693
 USAGE:
 
 Navigate to the directory that contains this bash file and copy the dictionary file to the same directory, and run this command:
-Bash dict2mdx.sh dictname.anyextension (ex. dict.txt)
+bash dict2mdx.sh dictname.anyextension (ex. dict.txt)
 
 If requirements are met and all dependencies are ready, your conversion will run smoothly and your .mdx dictionary will be ready, to be used by Multi-dictionaries viewers which support .mdx files (ex. Bluedict, Mdict, Golden Dict desktop, etc).
 
