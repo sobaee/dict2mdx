@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Convert Lingvo DSL, Babylon BGL, Stardict, ZIM, Slob, Tabfile txt, etc dictionaries to MDict MDX (see input formats supported by https://github.com/ilius/pyglossary)
+# Convert Lingvo DSL, Babylon BGL, Stardict, ZIM, etc dictionaries to MDict MDX (see input formats supported by https://github.com/ilius/pyglossary)
 # 
 # Dependencies:
-# python3, sqlite3, pyglossary, mdict-utils
-# optional dependency: dictzip (for unpacking .dz files)
-#
+# python3, pyglossary, mdict-utils
+# 
 # Install all dependencies with:
 # pip3 install mdict-utils lxml polib PyYAML beautifulsoup4 marisa-trie html5lib PyICU libzim>=1.0 python-lzo prompt_toolkit python-idzip
+#pyglossary better to be installed from a local folder with: python setup.py
 
 if command -v python3; then
     echo 'ok!'
@@ -47,9 +47,26 @@ if [[ "$src" =~ .*\.dz ]]; then
 fi
 
 if [ -f "${src%.*}.mtxt" ]; then
-    mdict --title title.html --description description.html -a "${src%.*}.mtxt" "${src%.*}.mdx"
-else
+read -p "${src%.*}.mtxt already exists! Do you want to convert it directly to MDX? (y/n) " answer
+    case $answer in
+    y|Y) # Use Word Title option
+        mdict --title title.html --description description.html -a "${src%.*}.mtxt" "${src%.*}.mdx"
 
+        echo 'All done!'
+        exit 1
+        ;;
+    n|N) # Do not use Word Title option
+        
+       
+        ;;
+    *) # Invalid choice
+        echo "Invalid option. Please enter y or n."
+        ;;
+esac
+        fi
+
+        
+       
 db_file="${src%.*}.cache"
 
 if [ -e "$db_file" ]; then
@@ -61,7 +78,22 @@ if [ -e "$db_file" ]; then
     fi
 fi
 
-pyglossary "$src" "$db_file" --write-format=OctopusMdictSource
+read -p "Do you want to use Word Title option? (y/n): " choice1
+    case $choice1 in
+    y|Y) # Use Word Title option
+        pyglossary "$src" "$db_file" --write-format=OctopusMdictSource --json-write-options '{"word_title": true}'
+
+        echo 'All done!'
+        ;;
+    n|N) # Do not use Word Title option
+        
+        pyglossary "$src" "$db_file" --write-format=OctopusMdictSource
+        echo 'All done!'
+        ;;
+    *) # Invalid choice
+        echo "Invalid option. Please enter y or n."
+        ;;
+esac
 
 mdict --title title.html --description description.html -a "$db_file" "${src%.*}.mdx"
 
@@ -78,5 +110,3 @@ if [ -d "${src%.*}.txt_res" ]; then
 fi
 
 echo 'All done!'
-
-fi
