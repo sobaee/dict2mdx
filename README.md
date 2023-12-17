@@ -1,5 +1,5 @@
 # dict2mdx
-This is a bash script to automatically convert any dictionary which supported reading through pyglossary to mdx using pyglossary and mdict-utils tools.
+This is a bash script to automatically convert Lingvo DSL, Babylon BGL, Stardict, ZIM, etc dictionaries to MDict MDX (see input formats supported by https://github.com/ilius/pyglossary)
 
 REQUIRMENTS: 
 
@@ -11,7 +11,7 @@ https://gist.github.com/ilius/88d11fa37a4a40cd0d7f6535120b0693
 
 3- python 3.9 and up.
 
-4- pip3 install mdict-utils lxml polib PyYAML beautifulsoup4 marisa-trie html5lib PyICU libzim>=1.0 python-lzo prompt_toolkit
+4- pip3 install mdict-utils lxml polib PyYAML beautifulsoup4 marisa-trie html5lib PyICU libzim>=1.0 python-lzo prompt_toolkit idzip
 
 
 
