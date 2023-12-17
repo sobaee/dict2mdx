@@ -26,3 +26,7 @@ Bash dict2mdx.sh dictname.anyextension (ex. dict.txt)
 If requirements are met and all dependencies are ready, your conversion will run smoothly and your .mdx dictionary will be ready, to be used by Multi-dictionaries viewers (ex. Bluedict, Mdict, Golden Dict desktop, etc).
 
 Thanks to 4pda guy who made a primary version of this automatic bash script who inspired me to update this script and make it more useful.
+
+Thanks to the developers of Pyglossary and mdict-utils.
+
+Download this modified ready version of Pyglossary, with octopus_mdict_source.py added and setup.py fixed, so after decompression of this zip file, you can do: "python setup.py install" to install pyglossay and it will work perfectly: https://drive.google.com/open?id=1foGOqZGtbVgG65zlEk2hXMPXKSQyNuIX
