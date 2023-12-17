@@ -5,7 +5,7 @@ N.B: this script can also pack the resources folder which is located beside the 
 <br />
 <br />
 <br />
-## REQUIRMENTS: 
+##REQUIRMENTS: 
 
 1- [Pyglossary](https://github.com/ilius/pyglossary) which originally come without octopus_mdict_source.py plugin if you install it using `pip install pyglossary`, because of the developer decided to stop developing this plugin.  
 
@@ -20,7 +20,7 @@ SO: You can download my modified ready version of pyglossary 4.6.1 with octopus_
 <br />
 <br />
 <br />
-## USAGE:
+##USAGE:
 
 Navigate to the directory that contains this bash file and copy the dictionary file to the same directory, and run this command:
 `bash dict2mdx.sh dictname.anyextension` (ex. dict.txt)
