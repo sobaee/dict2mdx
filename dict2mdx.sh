@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Convert Lingvo DSL, Babylon BGL, Stardict, ZIM, etc dictionaries to MDict MDX (see input formats supported by https://github.com/ilius/pyglossary)
+# Convert Lingvo DSL, Babylon BGL, Stardict, ZIM, Slob, Tabfile txt, etc dictionaries to MDict MDX (see input formats supported by https://github.com/ilius/pyglossary)
 # 
 # Dependencies:
 # python3, sqlite3, pyglossary, mdict-utils
 # optional dependency: dictzip (for unpacking .dz files)
-# 
+#
 # Install all dependencies with:
-# pip3 install mdict-utils lxml polib PyYAML beautifulsoup4 marisa-trie html5lib PyICU libzim>=1.0 python-lzo prompt_toolkit
+# pip3 install mdict-utils lxml polib PyYAML beautifulsoup4 marisa-trie html5lib PyICU libzim>=1.0 python-lzo prompt_toolkit idzip
 
 if command -v python3; then
     echo 'ok!'
@@ -27,13 +27,6 @@ if command -v mdict; then
     echo 'ok!'
 else
     echo "ERROR: mdict not found! Run 'pip3 install mdict-utils'!"
-    exit 1
-fi
-
-if command -v sqlite3; then
-    echo 'ok!'
-else
-    echo "ERROR: sqlite3 not found! Use the OS package manager to install!"
     exit 1
 fi
 
