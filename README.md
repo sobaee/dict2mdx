@@ -9,7 +9,7 @@ https://github.com/ilius/pyglossary
 
 SO: You can download my modified ready version of pyglossary with "octopus_mdict_source.py" plugin added and setup.py fixed; from the following google drive link. After decompression of the downloaded zip file, you can do: `python setup.py install` from inside the decompressed folder to install this modified version of pyglossay and it will work perfectly: https://drive.google.com/open?id=1foGOqZGtbVgG65zlEk2hXMPXKSQyNuIX
 
-2- "octopus_mdict_source.py" plugin to be added to /pyglossary/plugins of Pyglossary:
+2- JUST IF YOU WILL NOT USE MY MODIFIED VERSION OF PYGLOSSARY FROM THE GOOGLE DRIVE LINK ABOVE; you will need to download "octopus_mdict_source.py" plugin from the following link and add it to /pyglossary/plugins folder of Pyglossary:
 https://gist.github.com/ilius/88d11fa37a4a40cd0d7f6535120b0693
 
 3- python 3.9 and up.
