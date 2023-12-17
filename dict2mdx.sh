@@ -7,7 +7,7 @@
 # optional dependency: dictzip (for unpacking .dz files)
 #
 # Install all dependencies with:
-# pip3 install mdict-utils lxml polib PyYAML beautifulsoup4 marisa-trie html5lib PyICU libzim>=1.0 python-lzo prompt_toolkit idzip
+# pip3 install mdict-utils lxml polib PyYAML beautifulsoup4 marisa-trie html5lib PyICU libzim>=1.0 python-lzo prompt_toolkit python-idzip
 
 if command -v python3; then
     echo 'ok!'
