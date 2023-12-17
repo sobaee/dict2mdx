@@ -2,6 +2,8 @@
 This is a bash script to automatically convert Lingvo DSL, Babylon BGL, Stardict, ZIM, Slob, Tabfile txt, etc dictionaries to MDict MDX (see input formats supported by [Pyglossary](https://github.com/ilius/pyglossary).
 N.B: this script can also pack the resources folder which is located beside the dictionary file to MDD automatically.
 
+
+
 REQUIRMENTS: 
 
 1- [Pyglossary](https://github.com/ilius/pyglossary) which originally come without octopus_mdict_source.py plugin if you install it using `pip install pyglossary`, because of the developer decided to stop developing this plugin.
@@ -14,6 +16,8 @@ SO: You can download my modified ready version of pyglossary 4.6.1 with octopus_
 3- python 3.9 and up.
 
 4- `pip3 install mdict-utils lxml polib PyYAML beautifulsoup4 marisa-trie html5lib PyICU libzim>=1.0 python-lzo prompt_toolkit python-idzip`
+
+
 
 
 
