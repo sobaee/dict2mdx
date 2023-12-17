@@ -4,7 +4,6 @@ N.B: this script can also pack the resources folder which is located beside the 
 
 <br />
 <br />
-<br />
 
 ### REQUIRMENTS: 
 
@@ -20,12 +19,14 @@ SO: You can download my modified ready version of pyglossary 4.6.1 with octopus_
 
 <br />
 <br />
-<br />
+
 
 ### USAGE:
 
 Navigate to the directory that contains this bash file and copy the dictionary file to the same directory, and run this command:
 `bash dict2mdx.sh dictname.anyextension` (ex. dict.txt)
+<br />
+<br />
 
 ### Finally:
 If requirements are met and all dependencies are ready, your conversion will run smoothly and your .mdx dictionary will be ready, to be used by Multi-dictionaries viewers which support .mdx files (ex. Bluedict, Mdict, Golden Dict desktop, etc).  
