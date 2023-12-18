@@ -32,6 +32,6 @@ Navigate to the directory that contains this bash file and copy the dictionary f
 ### Finally:
 If requirements are met and all dependencies are ready, your conversion will run smoothly and your .mdx dictionary will be ready, to be used by Multi-dictionaries viewers which support .mdx files (ex. Bluedict, Mdict, Golden Dict desktop, etc).  
 
-Thanks to 4pda.to guy who made the primary version of this automatic bash script who inspired me to update this script and make it more useful.  
+Thanks to 4pda.to guy "cсpizz" who made the primary version of this automatic bash script who inspired me to update this script and make it more useful. [LINK](https://gist.github.com/glowinthedark/e393730e8477bb64f86fc99ec21d6303)
 
 Thanks to the owners of Pyglossary and mdict-utils.
