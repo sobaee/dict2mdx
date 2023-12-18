@@ -1,5 +1,5 @@
 # dict2mdx
-This is a bash script (and a similar python script) to automatically convert Lingvo DSL, Babylon BGL, Stardict, ZIM, Slob, Tabfile txt, etc dictionaries to MDict MDX (see input formats supported by [Pyglossary](https://github.com/ilius/pyglossary).  
+This is a script (both bash and python) to automatically convert Lingvo DSL, Babylon BGL, Stardict, ZIM, Slob, Tabfile txt, etc dictionaries to MDict MDX (see input formats supported by [Pyglossary](https://github.com/ilius/pyglossary).  
 
 N.B: this script can also pack the resources folder which is located beside the dictionary file to MDD automatically.
 
