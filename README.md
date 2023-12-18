@@ -1,5 +1,5 @@
 # dict2mdx
-This is a bash script to automatically convert Lingvo DSL, Babylon BGL, Stardict, ZIM, Slob, Tabfile txt, etc dictionaries to MDict MDX (see input formats supported by [Pyglossary](https://github.com/ilius/pyglossary).  
+This is a bash script (and a similar python script) to automatically convert Lingvo DSL, Babylon BGL, Stardict, ZIM, Slob, Tabfile txt, etc dictionaries to MDict MDX (see input formats supported by [Pyglossary](https://github.com/ilius/pyglossary).  
 
 N.B: this script can also pack the resources folder which is located beside the dictionary file to MDD automatically.
 
@@ -18,20 +18,23 @@ SO: You can download my modified ready version of pyglossary 4.6.1 with octopus_
 
 4- `pip3 install mdict-utils lxml polib PyYAML beautifulsoup4 marisa-trie html5lib PyICU libzim>=1.0 python-lzo prompt_toolkit python-idzip`  
 
+5- which package (needed by python script to confirm the presence of the dependincies)
+
 <br />
 <br />
 
 
 ### USAGE:
 
-Navigate to the directory that contains this bash file and copy the dictionary file to the same directory, and run this command:
-`bash dict2mdx.sh dictname.anyextension` (ex. dict.txt)
+Navigate to the directory that contains this bash script (or python script) and copy the dictionary file to the same directory, and run this command:
+`bash dict2mdx.sh` or
+`python dict2mdx.py`
 <br />
 <br />
 
 ### Finally:
 If requirements are met and all dependencies are ready, your conversion will run smoothly and your .mdx dictionary will be ready, to be used by Multi-dictionaries viewers which support .mdx files (ex. Bluedict, Mdict, Golden Dict desktop, etc).  
 
-Thanks to 4pda.to guy "cсpizz" who made the primary version of this automatic bash script who inspired me to update this script and make it more useful. [LINK](https://gist.github.com/glowinthedark/e393730e8477bb64f86fc99ec21d6303)
+Thanks to 4pda.to guy "cсpizz" who made the primary version of this automatic bash script who inspired me to update this script, make a similar python script and make it more useful. [LINK to the original script](https://gist.github.com/glowinthedark/e393730e8477bb64f86fc99ec21d6303)
 
 Thanks to the owners of Pyglossary and mdict-utils.
