@@ -3,39 +3,35 @@
 # Convert Lingvo DSL, Babylon BGL, Stardict, ZIM, etc dictionaries to MDict MDX (see input formats supported by https://github.com/ilius/pyglossary)
 # 
 # Dependencies:
-# python3, pyglossary, mdict-utils
+# python3, pyglossary, mdict-utils, which
 # 
 # Install all dependencies with:
 # pip3 install mdict-utils lxml polib PyYAML beautifulsoup4 marisa-trie html5lib PyICU libzim>=1.0 python-lzo prompt_toolkit python-idzip
-#pyglossary better to be installed from a local folder with: python setup.py
+# pyglossary better to be installed from a local folder with: python setup.py install (better to use my ready pyglossary zip file)
 
 if command -v python3; then
-    echo 'ok!'
+    echo 'Python3 is ready!'
 else
     echo "ERROR: python not installed! Download and install from https://www.python.org/downloads"
     exit 1
 fi
 
 if command -v pyglossary; then
-    echo 'ok!'
+    echo 'Pyglossary is ready!'
 else
     echo "ERROR: pyglossary not installed! Run 'pip3 install pyglossary'"
     exit 1
 fi
 
 if command -v mdict; then
-    echo 'ok!'
+    echo 'Mdict-utils is ready!'
 else
     echo "ERROR: mdict not found! Run 'pip3 install mdict-utils'!"
     exit 1
 fi
 
-if [[ "x" == "x$1" ]]; then
-    printf "\n\nUSAGE: `basename $0` dictionary.dsl\n"
-    exit 1
-fi
-
-src="$1"
+src=""
+read -p "Input file (ex. dictionary.dsl): " src
 
 printf ${src%.*} > description.html
 printf ${src%.*} > title.html
