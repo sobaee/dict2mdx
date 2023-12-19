@@ -12,28 +12,43 @@
 import os
 import sys
 import subprocess
+import re
+import readline
 
-def command_exists(command):
-    # Check if a command exists in the system
-    return subprocess.call(['which', command], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) == 0
+history_file = ".script_history.txt"
 
-if command_exists('python3'):
-    print('Python3 is ready!')
+# Check if history_file exists
+if not os.path.isfile(history_file):
+    print(f"{history_file} not found. Ignoring on first run.")
+
+# Load previous command history
+try:
+    readline.read_history_file(history_file)
+except FileNotFoundError:
+    pass
+
+def check_command(command):
+    try:
+        subprocess.check_output([command, '--version'], stderr=subprocess.STDOUT)
+    except subprocess.CalledProcessError:
+        return False
+    else:
+        return True
+
+if check_command('python3'):
+    if check_command('pyglossary'):
+        if check_command('mdict'):
+            print("All dependencies are ready!\n")
+        else:
+            print("ERROR: mdict not found! Run 'pip3 install mdict-utils'!")
+            exit(1)
+    else:
+        print("ERROR: pyglossary not installed! Run 'pip3 install pyglossary'")
+        exit(1)
 else:
     print("ERROR: python not installed! Download and install from https://www.python.org/downloads")
-    sys.exit(1)
+    exit(1)
 
-if command_exists('pyglossary'):
-    print('Pyglossary is ready!')
-else:
-    print("ERROR: pyglossary not installed! Run 'pip3 install pyglossary'")
-    sys.exit(1)
-
-if command_exists('mdict'):
-    print('Mdict-utils is ready!')
-else:
-    print("ERROR: mdict not found! Run 'pip3 install mdict-utils'!")
-    sys.exit(1)
 
 src = input("Input file (ex. dictionary.dsl): ")
 
@@ -47,6 +62,9 @@ if src.endswith('.dz'):
     print('Unpacking .dz file...')
     subprocess.run(['idzip', '-d', src])
     src = os.path.splitext(src)[0]
+    
+# Save command history
+readline.write_history_file(history_file)
 
 if os.path.isfile(f"{os.path.splitext(src)[0]}.mtxt"):
     answer = input(f"{os.path.splitext(src)[0]}.mtxt already exists! Do you want to convert it directly to MDX? (y/n) ")

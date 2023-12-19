@@ -9,26 +9,25 @@
 # pip3 install mdict-utils lxml polib PyYAML beautifulsoup4 marisa-trie html5lib PyICU libzim>=1.0 python-lzo prompt_toolkit python-idzip
 # pyglossary better to be installed from a local folder with: python setup.py install (better to use my ready pyglossary zip file)
 
-if command -v python3; then
-    echo 'Python3 is ready!'
+if command -v python3 >/dev/null 2>&1; then
+    if command -v pyglossary >/dev/null 2>&1; then
+        if command -v mdict >/dev/null 2>&1; then
+            echo -e "All dependencies are ready!\n"
+        else
+            echo "ERROR: mdict not found! Run 'pip3 install mdict-utils'!"
+            exit 1
+        fi
+    else
+        echo "ERROR: pyglossary not installed! Run 'pip3 install pyglossary'"
+        exit 1
+    fi
 else
     echo "ERROR: python not installed! Download and install from https://www.python.org/downloads"
     exit 1
 fi
 
-if command -v pyglossary; then
-    echo 'Pyglossary is ready!'
-else
-    echo "ERROR: pyglossary not installed! Run 'pip3 install pyglossary'"
-    exit 1
-fi
 
-if command -v mdict; then
-    echo 'Mdict-utils is ready!'
-else
-    echo "ERROR: mdict not found! Run 'pip3 install mdict-utils'!"
-    exit 1
-fi
+
 
 src=""
 read -p "Input file (ex. dictionary.dsl): " src
