@@ -38,7 +38,7 @@ def check_command(command):
 if check_command('python3'):
     if check_command('pyglossary'):
         if check_command('mdict'):
-            print("All dependencies are ready!\n")
+            print("\n If you want to convert any dict to MDX, then convert it to .mtxt first, and the script will ask you the next step!\n\n")
         else:
             print("ERROR: mdict not found! Run 'pip3 install mdict-utils'!")
             exit(1)
@@ -49,78 +49,36 @@ else:
     print("ERROR: python not installed! Download and install from https://www.python.org/downloads")
     exit(1)
 
+subprocess.run('pyglossary --cmd', shell=True)
 
-src = input("Input file (ex. dictionary.dsl): ")
+print()
+print()
 
-with open('description.html', 'w') as f:
-    f.write(os.path.splitext(src)[0])
+answer = input("Convert .mtxt to MDX? (y) or press any other key to exit? ")
+if answer.lower() == 'y':
+    src = input("Enter dict name again: ")
 
-with open('title.html', 'w') as f:
-    f.write(os.path.splitext(src)[0])
+    with open('description.html', 'w') as f:
+        f.write(src.rsplit('.', 1)[0])
 
-if src.endswith('.dz'):
-    print('Unpacking .dz file...')
-    subprocess.run(['idzip', '-d', src])
-    src = os.path.splitext(src)[0]
-    
-# Save command history
-readline.write_history_file(history_file)
+    with open('title.html', 'w') as f:
+        f.write(src.rsplit('.', 1)[0])
 
-if os.path.isfile(f"{os.path.splitext(src)[0]}.mtxt"):
-    answer = input(f"{os.path.splitext(src)[0]}.mtxt already exists! Do you want to convert it directly to MDX? (y/n) ")
-    if answer.lower() == 'y':
-        # Use Word Title option
-        subprocess.run(['mdict', '--title', 'title.html', '--description', 'description.html', '-a', f"{os.path.splitext(src)[0]}.mtxt", f"{os.path.splitext(src)[0]}.mdx"])
-        if os.path.isdir(f"{os.path.splitext(src)[0]}.cache_res"):
-            subprocess.run(['mdict', '-a', f"{os.path.splitext(src)[0]}.cache_res", f"{os.path.splitext(src)[0]}.mdd"])
+    if f"{src.rsplit('.', 1)[0]}.mtxt":
+        subprocess.run(f'mdict --title title.html --description description.html -a {src.rsplit(".",1)[0]}.mtxt {src.rsplit(".",1)[0]}.mdx', shell=True)
+
+        if f"{src.rsplit('.', 1)[0]}.mtxt_res":
+            subprocess.run(f'mdict -a {src.rsplit(".",1)[0]}.mtxt_res {src.rsplit(".",1)[0]}.mdd', shell=True)
         
-        if os.path.isdir(f"{os.path.splitext(src)[0]}.mtxt_res"):
-            subprocess.run(['mdict', '-a', f"{os.path.splitext(src)[0]}.mtxt_res", f"{os.path.splitext(src)[0]}.mdd"])
-        
-        if os.path.isdir(f"{os.path.splitext(src)[0]}.txt_res"):
-            subprocess.run(['mdict', '-a', f"{os.path.splitext(src)[0]}.txt_res", f"{os.path.splitext(src)[0]}.mdd"])
         print('All done!')
         sys.exit(1)
-    elif answer.lower() == 'n':
-        # Do not use Word Title option
-        pass
     else:
-        # Invalid choice
-        print("Invalid option. Please enter y or n.")
+        print(f"{src.rsplit('.', 1)[0]}.mtxt not found")
         sys.exit(1)
 
-db_file = f"{os.path.splitext(src)[0]}.cache"
-
-if os.path.exists(db_file):
-    answer = input(f"{db_file} already exists! OVERWRITE? (y/n) ")
-    if answer.lower() == 'y':
-        os.remove(db_file)
-    else:
-        sys.exit(1)
-
-choice1 = input("Do you want to use Word Title option? (y/n): ")
-if choice1.lower() == 'y':
-    # Use Word Title option
-    subprocess.run(['pyglossary', src, db_file, '--write-format=OctopusMdictSource', '--json-write-options', '{"word_title": true}'])
-    print('All done!')
-elif choice1.lower() == 'n':
-    # Do not use Word Title option
-    subprocess.run(['pyglossary', src, db_file, '--write-format=OctopusMdictSource'])
-    print('All done!')
 else:
-    # Invalid choice
-    print("Invalid option. Please enter y or n.")
+    print('Conversion done, Did not converted to MDX')
     sys.exit(1)
 
-subprocess.run(['mdict', '--title', 'title.html', '--description', 'description.html', '-a', db_file, f"{os.path.splitext(src)[0]}.mdx"])
-
-if os.path.isdir(f"{os.path.splitext(src)[0]}.cache_res"):
-    subprocess.run(['mdict', '-a', f"{os.path.splitext(src)[0]}.cache_res", f"{os.path.splitext(src)[0]}.mdd"])
-
-if os.path.isdir(f"{os.path.splitext(src)[0]}.mtxt_res"):
-    subprocess.run(['mdict', '-a', f"{os.path.splitext(src)[0]}.mtxt_res", f"{os.path.splitext(src)[0]}.mdd"])
-
-if os.path.isdir(f"{os.path.splitext(src)[0]}.txt_res"):
-    subprocess.run(['mdict', '-a', f"{os.path.splitext(src)[0]}.txt_res", f"{os.path.splitext(src)[0]}.mdd"])
-
-print('All done!')
+# Save command history
+readline.write_history_file(history_file)
