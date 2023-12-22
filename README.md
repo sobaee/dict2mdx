@@ -3,22 +3,25 @@ This is a python script to automatically convert Lingvo DSL, Babylon BGL, Stardi
 
 N.B: this script can also pack the resources folder which is located beside the dictionary file to MDD automatically.
 
-This script has developed because Pyglossary developer decided not to support .mtxt or .mdx writing; if the developer decided to support .mdx writing, this tool will be useless, and I hope he does that.
+This script has developed because Pyglossary developer decided not to support conversion to .mtxt or .mdx; if the developer decided to support conversion to .mdx, this tool will be useless, and I hope he does that.
 
 <br />
 <br />
 
 ### REQUIRMENTS: 
 
-1- [Pyglossary](https://github.com/ilius/pyglossary) which originally come without octopus_mdict_source.py plugin if you install it using `pip install pyglossary`, because of the developer decided to stop developing this plugin.  
+1-python 3.9 and up.
 
-SO: You can download my modified ready version of pyglossary 4.6.1 with octopus_mdict_source.py plugin added and setup.py fixed; from this Google Drive [LINK](https://drive.google.com/open?id=1foGOqZGtbVgG65zlEk2hXMPXKSQyNuIX). Decompress the downloaded zip file, and run: `python setup.py install` from inside the decompressed folder to install this modified version of pyglossay and it will work perfectly.
+2- [Pyglossary](https://github.com/ilius/pyglossary) which originally come without octopus_mdict_source.py plugin if you install it using `pip install pyglossary`, because of the developer decided to stop developing this plugin.  
+SO: DOWNLOAD my modified ready version of pyglossary 4.6.1 with octopus_mdict_source.py plugin added to /pyglossary/plugins folder, and ui_cmd_interactive.py file modified a bit; from this Google Drive [LINK](https://drive.google.com/open?id=1bXm_PJUfZrcFX1zZAPC50DOsm4-gKlmJ). Decompress the downloaded zip file, and run: `python setup.py install` from inside the decompressed folder to install this modified version of pyglossay and it will work perfectly.
 
-2- JUST IF YOU WILL NOT USE MY MODIFIED VERSION OF PYGLOSSARY FROM THE GOOGLE DRIVE LINK ABOVE; you will need to download "octopus_mdict_source.py" plugin from this [link](https://gist.github.com/ilius/88d11fa37a4a40cd0d7f6535120b0693) and add it to /pyglossary/plugins folder of Pyglossary.
+N.B: As a reference; you can download "octopus_mdict_source.py" plugin from this [link](https://gist.github.com/ilius/88d11fa37a4a40cd0d7f6535120b0693).
 
-3- python 3.9 and up.
+3- The most important dependencies:  
+`pip3 install prompt_toolkit mdict-utils beautifulsoup4 python-lzo python-idzip`
 
-4- `pip3 install mdict-utils lxml polib PyYAML beautifulsoup4 marisa-trie html5lib PyICU libzim>=1.0 python-lzo prompt_toolkit python-idzip` 
+4- Other important dependencies:  
+`pip3 install lxml polib PyYAML beautifulsoup4 marisa-trie html5lib PyICU libzim>=1.0` 
 
 <br />
 <br />
@@ -32,8 +35,8 @@ Navigate to the directory that contains this python script and copy the dictiona
 <br />
 
 ### Finally:
-If requirements are met and all dependencies are ready, your conversion will run smoothly and your .mdx dictionary will be ready, to be used by Multi-dictionaries viewers which support .mdx files (ex. Bluedict, Mdict, Golden Dict desktop, etc).  
+If requirements are met and all dependencies are ready, your conversion will run smoothly and your .mdx dictionary will be ready, to be used by Multi-dictionaries viewers which support .mdx files (ex. DictTango, Bluedict, Mdict, Golden Dict PC, etc).  
 
-Thanks to 4pda.to guy "cсpizz" who made the primary version of this automatic bash script who inspired me to update this script, make a similar python script and make it more useful. [LINK to the original script](https://gist.github.com/glowinthedark/e393730e8477bb64f86fc99ec21d6303).
+Thanks to "4pda.to" guy "cсpizz" who made the primary version of this automatic script who inspired me to update the script, make a similar python script and make it more useful. [LINK to the original script](https://gist.github.com/glowinthedark/e393730e8477bb64f86fc99ec21d6303).
 
 Thanks to the owners of Pyglossary and mdict-utils.
