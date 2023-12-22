@@ -3,14 +3,14 @@ This is a python script to automatically convert Lingvo DSL, Babylon BGL, Stardi
 
 N.B: this script can also pack the resources folder which is located beside the dictionary file to MDD automatically.
 
-This script has developed because Pyglossary developer decided not to support conversion to .mtxt or .mdx; if the developer decided to support conversion to .mdx, this tool will be useless, and I hope he does that.
+This script has developed because Pyglossary developer decided not to support conversion to .mtxt or .mdx; if the developer decided to support conversion to .mdx, this tool would not be developed, and I hope he does that.
 
 <br />
 <br />
 
 ### REQUIRMENTS: 
 
-1-python 3.9 and up.
+1- Python 3.9 and up.
 
 2- [Pyglossary](https://github.com/ilius/pyglossary) which originally come without octopus_mdict_source.py plugin if you install it using `pip install pyglossary`, because of the developer decided to stop developing this plugin.  
 SO: DOWNLOAD my modified ready version of pyglossary 4.6.1 with octopus_mdict_source.py plugin added to /pyglossary/plugins folder, and ui_cmd_interactive.py file modified a bit; from this Google Drive [LINK](https://drive.google.com/open?id=1bXm_PJUfZrcFX1zZAPC50DOsm4-gKlmJ). Decompress the downloaded zip file, and run: `python setup.py install` from inside the decompressed folder to install this modified version of pyglossay and it will work perfectly.
