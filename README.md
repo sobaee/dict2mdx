@@ -3,7 +3,7 @@ This is a python script to automatically convert Lingvo DSL, Babylon BGL, Stardi
 
 N.B: this script can also pack the resources folder which is located beside the dictionary file to MDD automatically.
 
-This script has developed because Pyglossary developer decided not to support .mtxt or .mdx writing; if the developer decided to support .mdx writing, this tool will be useless, amd I hope he does that.
+This script has developed because Pyglossary developer decided not to support .mtxt or .mdx writing; if the developer decided to support .mdx writing, this tool will be useless, and I hope he does that.
 
 <br />
 <br />
