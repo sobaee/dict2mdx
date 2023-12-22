@@ -35,7 +35,7 @@ Navigate to the directory that contains this python script and copy the dictiona
 <br />
 
 ### Finally:
-If requirements are met and all dependencies are ready, your conversion will run smoothly and your .mdx dictionary will be ready, to be used by Multi-dictionaries viewers which support .mdx files (ex. DictTango, Bluedict, Mdict, Golden Dict PC, etc).  
+If requirements are met and all dependencies are ready, your conversion will run smoothly and your .mdx dictionary will be ready, to be used by Multi-dictionaries viewers which support .mdx files (ex. DictTango, Bluedict, Mdict, GoldenDict PC, etc).  
 
 Thanks to "4pda.to" guy "cсpizz" who made the primary version of this automatic script who inspired me to update the script, make a similar python script and make it more useful. [LINK to the original script](https://gist.github.com/glowinthedark/e393730e8477bb64f86fc99ec21d6303).
 
