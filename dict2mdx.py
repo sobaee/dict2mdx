@@ -43,10 +43,10 @@ if check_command('python3'):
             print("ERROR: mdict not found! Run 'pip3 install mdict-utils'!")
             exit(1)
     else:
-        print("ERROR: pyglossary not installed! Run 'pip3 install pyglossary'")
+        print("ERROR: pyglossary not installed! Download my modified version on github readme.md and run this command from inside the main folder 'python setup.py install'")
         exit(1)
 else:
-    print("ERROR: python not installed! Download and install from https://www.python.org/downloads")
+    print("ERROR: python not installed! install it according to your system")
     exit(1)
 
 subprocess.run('pyglossary --cmd', shell=True)
@@ -64,17 +64,17 @@ if answer.lower() == 'y':
     with open('title.html', 'w') as f:
         f.write(src.rsplit('.', 1)[0])
 
-    if f"{src.rsplit('.', 1)[0]}.mtxt":
-        subprocess.run(f'mdict --title title.html --description description.html -a {src.rsplit(".",1)[0]}.mtxt {src.rsplit(".",1)[0]}.mdx', shell=True)
-
-        if f"{src.rsplit('.', 1)[0]}.mtxt_res":
-            subprocess.run(f'mdict -a {src.rsplit(".",1)[0]}.mtxt_res {src.rsplit(".",1)[0]}.mdd', shell=True)
-        
-        print('All done!')
-        sys.exit(1)
+    if os.path.isfile(f"{os.path.splitext(src)[0]}.mtxt"):
+        subprocess.run(f'mdict --title title.html --description description.html -a {src.rsplit(".",1)[0]}.mtxt {src.rsplit(".",1)[0]}.mdx')
     else:
         print(f"{src.rsplit('.', 1)[0]}.mtxt not found")
         sys.exit(1)
+        
+    if os.path.isdir(f"{os.path.splitext(src)[0]}.mtxt_res"):
+        subprocess.run(['mdict', '-a', f"{os.path.splitext(src)[0]}.mtxt_res", f"{os.path.splitext(src)[0]}.mdd"])
+        print('All done!')
+        sys.exit(1)
+    
 
 else:
     print('Conversion done, Did not converted to MDX')
