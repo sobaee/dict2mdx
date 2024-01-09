@@ -38,7 +38,7 @@ def check_command(command):
 if check_command('python3'):
     if check_command('pyglossary'):
         if check_command('mdict'):
-            print("\n If you want to convert any dict to MDX, then convert it to .mtxt first, and the script will ask you the next step!\n\n")
+            print("All dependings are ready!!\n")
         else:
             print("ERROR: mdict not found! Run 'pip3 install mdict-utils'!")
             exit(1)
@@ -49,36 +49,94 @@ else:
     print("ERROR: python not installed! install it according to your system")
     exit(1)
 
+answer1 = input("If your file is already .mtxt and/or sources folder and you want to convert directly to MDX and/or MDD press (y)!! OR press any other key if not! ")
+
+if answer1.lower() == 'y':
+    src = input("Enter the .mtxt dict name: ")
+
+    with open("description.html", "w") as file:
+        file.write(src.split('.')[0])
+
+    with open("title.html", "w") as file:
+        file.write(src.split('.')[0])
+
+    if os.path.exists(src.split('.')[0] + ".mtxt"):
+        cmd = [
+            "mdict",
+            "--title", "title.html",
+            "--description", "description.html",
+            "-a", src.split('.')[0] + ".mtxt",
+            src.split('.')[0] + ".mdx"
+        ]
+        subprocess.run(cmd, check=True)
+
+        if os.path.isdir(src.split('.')[0] + ".mtxt_res"):
+            cmd = [
+                "mdict",
+                "-a", src.split('.')[0] + ".mtxt_res",
+                src.split('.')[0] + ".mdd"
+            ]
+            subprocess.run(cmd, check=True)
+            print("Sources is also converted to MDD\n")
+
+        print("All done!")
+        exit(1)
+    else:
+        print(f"ERROR: {src.split('.')[0]}.mtxt doesn't found\n")
+        if os.path.isdir(src.split('.')[0] + ".mtxt_res"):
+            cmd = [
+                "mdict",
+                "-a", src.split('.')[0] + ".mtxt_res",
+                src.split('.')[0] + ".mdd"
+            ]
+            subprocess.run(cmd, check=True)
+            print("Only MDD is packed!!!")
+        exit(1)
+else:
+    print("Your conversion will continue\n")
+
 subprocess.run('pyglossary --cmd', shell=True)
 
 print()
 print()
-
 answer = input("Convert .mtxt to MDX? (y) or press any other key to exit? ")
-if answer.lower() == 'y':
+
+if answer.lower() == "y":
     src = input("Enter dict name again: ")
 
-    with open('description.html', 'w') as f:
-        f.write(src.rsplit('.', 1)[0])
+    with open("description.html", "w") as file:
+        file.write(src.split('.')[0])
 
-    with open('title.html', 'w') as f:
-        f.write(src.rsplit('.', 1)[0])
+    with open("title.html", "w") as file:
+        file.write(src.split('.')[0])
 
-    if os.path.isfile(f"{os.path.splitext(src)[0]}.mtxt"):
-        subprocess.run(f'mdict --title title.html --description description.html -a {src.rsplit(".",1)[0]}.mtxt {src.rsplit(".",1)[0]}.mdx')
+    if os.path.exists(src.split('.')[0] + ".mtxt"):
+        cmd = [
+            "mdict",
+            "--title", "title.html",
+            "--description", "description.html",
+            "-a", src.split('.')[0] + ".mtxt",
+            src.split('.')[0] + ".mdx"
+        ]
+        subprocess.run(cmd, check=True)
+
+        if os.path.isdir(src.split('.')[0] + ".mtxt_res"):
+            cmd = [
+                "mdict",
+                "-a", src.split('.')[0] + ".mtxt_res",
+                src.split('.')[0] + ".mdd"
+            ]
+            subprocess.run(cmd, check=True)
+            print("Sources is also converted to MDD\n")
+
+        print("All done!")
+        exit(1)
     else:
-        print(f"{src.rsplit('.', 1)[0]}.mtxt not found")
-        sys.exit(1)
-        
-    if os.path.isdir(f"{os.path.splitext(src)[0]}.mtxt_res"):
-        subprocess.run(['mdict', '-a', f"{os.path.splitext(src)[0]}.mtxt_res", f"{os.path.splitext(src)[0]}.mdd"])
-        print('All done!')
-        sys.exit(1)
-    
-
+        print(f"{src.split('.')[0]}.mtxt doesn't found")
+        exit(1)
 else:
-    print('Conversion done, Did not converted to MDX')
-    sys.exit(1)
+    print("Conversion done, Did not convert to MDX")
+    exit(1)
 
 # Save command history
 readline.write_history_file(history_file)
