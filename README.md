@@ -13,7 +13,7 @@ This script has developed because Pyglossary developer decided not to support co
 1- Python 3.9 and up.
 
 2- [Pyglossary](https://github.com/ilius/pyglossary) which originally come without octopus_mdict_source.py plugin if you install it using `pip install pyglossary`, because of the developer decided to stop developing this plugin.  
-SO: DOWNLOAD my modified ready version of pyglossary 4.6.1 with octopus_mdict_source.py plugin added to /pyglossary/plugins folder, and ui_cmd_interactive.py file modified a bit; from this Google Drive [LINK](https://drive.google.com/open?id=1bXm_PJUfZrcFX1zZAPC50DOsm4-gKlmJ). Decompress the downloaded zip file, and run: `python setup.py install` from inside the decompressed folder to install this modified version of pyglossay and it will work perfectly.
+SO: DOWNLOAD my modified ready version of pyglossary 5.0.0 with octopus_mdict_source.py plugin added to /pyglossary/plugins folder, and ui_cmd_interactive.py file modified a bit; from my fork [LINK](https://codeload.github.com/sobaee/pyglossaryfork/zip/refs/tags/5.0.0). Decompress the downloaded zip file, and run: `python setup.py install` from inside the decompressed folder to install this modified version of pyglossay and it will work perfectly.
 
 N.B: As a reference; you can download "octopus_mdict_source.py" plugin from this [link](https://gist.github.com/ilius/88d11fa37a4a40cd0d7f6535120b0693).
 
@@ -21,7 +21,7 @@ N.B: As a reference; you can download "octopus_mdict_source.py" plugin from this
 `pip3 install prompt_toolkit mdict-utils beautifulsoup4 python-lzo python-idzip`
 
 4- Other important dependencies:  
-`pip3 install lxml polib PyYAML beautifulsoup4 marisa-trie html5lib PyICU libzim>=1.0` 
+`pip3 install lxml polib PyYAML beautifulsoup4 marisa-trie html5lib PyICU libzim` 
 
 <br />
 <br />
