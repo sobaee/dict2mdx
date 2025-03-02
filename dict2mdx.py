@@ -49,10 +49,10 @@ else:
     print("ERROR: python not installed! install it according to your system")
     exit(1)
 
-answer1 = input("If your file is already .mtxt and/or sources folder and you want to convert directly to MDX and/or MDD press (y)!! OR press any other key if not! ")
+answer1 = input("to convert directly from .mtxt to MDX or to pack MDD resources only press (y)!! OR PRESS ANY OTHER KEY TO CONTINUE! ")
 
 if answer1.lower() == 'y':
-    src = input("Enter the .mtxt dict name: ")
+    src = input("Enter your .mtxt dict full name without spaces: ")
 
     with open("description.html", "w") as file:
         file.write(src.split('.')[0])
@@ -102,7 +102,7 @@ print()
 answer = input("Convert .mtxt to MDX? (y) or press any other key to exit? ")
 
 if answer.lower() == "y":
-    src = input("Enter dict name again: ")
+    src = input("Enter your result .mtxt dict full name again, please: ")
 
     with open("description.html", "w") as file:
         file.write(src.split('.')[0])
